@@ -1,0 +1,20 @@
+#include <iostream>
+#include<string>
+using namespace std;
+
+void change( char *pointer){
+        pointer[0]='A';
+
+}
+
+int main() {
+   char array_stirng[]="hello";
+   char *pointer=array_stirng;
+   int i=0;
+   change(pointer);
+   while(array_stirng[i] !='\0'){
+       cout<<array_stirng[i];
+       i++;
+   }
+    return 0;
+}

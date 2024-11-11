@@ -1,0 +1,32 @@
+#include <iostream>
+#include <iomanip> // For std::fixed and std::setprecision
+using namespace std;
+
+void printValue(void* ptr, char type) {
+    if (type == 'i') {
+        cout << "Integer: " << *(int*)ptr << endl;
+    } else if (type == 'f') {
+        cout << "Float: " << *(float*)ptr << endl;
+    } else if (type == 'F') {  // Print integer as a float with 2 decimal places
+        cout << "Integer as Float: " << fixed << setprecision(2) << static_cast<float>(*(int*)ptr) << endl;
+    } else if (type == 'I') {  // Print float as an integer
+        cout << "Float as Integer: " << static_cast<int>(*(float*)ptr) << endl;
+    } else {
+        cout << "Unknown type!" << endl;
+    }
+}
+
+int main() {
+    int i = 10;
+    float f = 5.5;
+
+    // Original types
+    printValue(&i, 'i'); // Print as int
+    printValue(&f, 'f'); // Print as float
+
+    // Converted types
+    printValue(&i, 'F'); // Print int as float with 2 decimal places
+    printValue(&f, 'I'); // Print float as int
+
+    return 0;
+}

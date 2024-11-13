@@ -1,0 +1,23 @@
+/*Create a program that accepts a floating-point number as input and type casts it into an integer.
+Print both the original floating-point number and the casted integer.*/
+
+
+#include <iostream>
+#include <iomanip>//for deemal
+using namespace std;
+//satic_cast<datatype>(*ptrname)
+void input(float *ptr) {
+    int ptr1 = static_cast<int>(*ptr);
+    cout<<ptr1<<endl;
+    //cout << fixed << setprecision(2) << static_cast<float>(ptr1) << endl;
+}
+//1.5
+
+int main() {
+    float floatvalue = 1.5;
+    float* ptr = &floatvalue;
+  //  int ptr1 = static_cast<int>(*ptr);
+    //cout << fixed << setprecision(2) << static_cast<float>(ptr1) << endl;
+    input(ptr);
+    return 0;
+}

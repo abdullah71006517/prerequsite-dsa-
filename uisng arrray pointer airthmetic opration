@@ -1,0 +1,21 @@
+/*Write a program that accepts an array of integers and
+uses pointer arithmetic to access and print each element in the array.
+Do not use array indexing ([]), only pointer dereferencing.*/
+
+#include <iostream>
+
+using namespace std;
+// 3 index addisation 4 index
+int arithmetic(int*ptr ){
+
+return  *(ptr+2)+*(ptr+3);
+}
+
+int main() {
+    int array[5] ={5,10,15,22,24};
+    int *ptr=array;
+    int result =arithmetic(ptr);
+    cout<< "arithmetic opration index 3 and index 4 ="<<result;
+
+    return 0;
+}

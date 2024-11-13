@@ -1,0 +1,34 @@
+/*
+Write a program that uses a function pointer to call different functions based on user input. 
+The functions should perform basic arithmetic operations
+ (addition, subtraction, multiplication, and division).*/
+#include <iostream>
+
+using namespace std;
+// 3 index addisation 4 index
+int arithmetic(int*ptr ,char opration){
+    if(opration=='A'| opration=='a')
+return  *(ptr+2)+*(ptr+3);
+if(opration=='s'| opration=='S')
+return  *(ptr+2)-*(ptr+3);
+if(opration=='M'| opration=='m')
+return  *(ptr+2)**(ptr+3);
+if(opration=='d'| opration=='D')
+return  *(ptr+2)/ (*(ptr+3) );
+}
+
+int main() {
+int t;
+cin>>t;
+
+while(t--) {
+
+    int array[5] ={25,15,20,20,24};
+    int *ptr=array;
+char A;
+cin>>A;
+    int result =arithmetic(ptr,A);
+    cout<< "arithmetic opration index 3 and index 4 ="<<result;
+}
+    return 0;
+}
